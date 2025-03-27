@@ -1,0 +1,36 @@
+nav {
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #ddd;
+  padding: 1rem 2rem;
+
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: inline;
+
+    a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #333;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: background-color 0.3s, color 0.3s;
+
+      &:hover {
+        background-color: #e2e6ea;
+        color: #000;
+      }
+
+      &.active {
+        background-color: #007bff;
+        color: white;
+      }
+    }
+  }
+}

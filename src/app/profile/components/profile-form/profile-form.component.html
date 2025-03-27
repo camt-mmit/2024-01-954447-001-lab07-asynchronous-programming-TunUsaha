@@ -1,0 +1,49 @@
+<fieldset [formGroup]="formGroup()" [disabled]="formGroup().disabled">
+  <label>
+    <b>Studen Id</b>
+    <input type="text" formControlName="studentID" />
+  </label>
+  <br />
+  <label>
+    <b>First Name</b>
+    <input type="text" formControlName="firstname" />
+  </label>
+  <br />
+  <label>
+    <b>Last Name</b>
+    <input type="text" formControlName="lastname" />
+  </label>
+  <br />
+  <label>
+    <b>Age</b>
+    <input type="number" formControlName="age" />
+  </label>
+  <br />
+  <label>
+    <b>autobiography</b>
+    <textarea formControlName="autobiography"></textarea>
+  </label>
+  <br />
+
+  <fieldset
+    formArrayName="friends"
+    [disabled]="friendsFormArray().disabled"
+  ><legend>
+    <b>
+      Friends
+    </b>
+    <button type="button" (click)="addFriend()">+</button>
+  </legend>
+  @for (control of friendsFormArray().controls; track control) {
+    <div>
+      <button type="button" (click)="moveFriend($index,-1)">UP</button>
+      <button type="button" (click)="moveFriend($index,+1)">DOUN</button>
+      <label>
+        <b>Friend {{$index + 1}}</b>
+        <input type="text" [formControlName]="$index"/>
+      </label>
+      <button type="button" (click)="removeFriend($index)">X</button>
+    </div>
+  }
+</fieldset>
+</fieldset>
